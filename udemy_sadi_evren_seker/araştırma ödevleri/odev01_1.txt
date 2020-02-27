@@ -1,0 +1,22 @@
+Araþtýrma Ödevi: https://www.youtube.com/watch?v=V1F5b-eL2kA
+p<0.05 => anlamlý fark vardýr.
+p>0.05 => anlamlý fark yoktur.
+
+Zorunlu olmamakla birlikte bu aþamada p-value deðerini ve bu deðerin kullanýmýný araþtýrmanýzda fayda olabilir. 
+
+Ýlk araþtýrma ödeviniz olarak internet üzerinde p-value deðerini araþtýrýnýz. 
+
+Elbette bu araþtýrma konusu üzerinde kýsa bir ders hazýrlayarak deðerin önemini ve bizim çalýþmalarýmýz ile ilgilisini anlattmaya çalýþacaðýz. Ancak bir makine öðrenmesi uzmaný ve veri bilimcisi olarak internet üzerinde kendi kaynaklarýnýzý bulmaya baþlamanýzda fayda var. 
+
+Çok kullandýðýmýz ve size fayda saðlayabilecek bazý siteleri aþaðýda yayýnlýyorum. 
+
+Wikipedia
+Kaggle
+KDNuggets
+Quora
+StackOverflow
+Ayrýca çok sayýda üniversitenin bu konularla ilgili çevrim içi kaynaðý bulunmaktadýr. Aþaðýda bazý örnekler bulunmaktadýr:
+
+https://onlinecourses.science.psu.edu/stat501/
+https://online.stanford.edu/course/probability-and-statistics-self-paced
+Ýlk araþtýrma ödevinizde baþarýlar ve bir sonraki derse p-value üzerinde konuþmak üzere, baþarýlar
