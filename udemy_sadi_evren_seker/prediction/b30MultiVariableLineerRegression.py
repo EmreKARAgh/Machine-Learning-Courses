@@ -2,7 +2,8 @@
 #Multi Dimensional LineerRegression
 from sklearn.linear_model import LinearRegression
 import b29PP
-from sklearn.metrics import r2_score
+
+
 
 
 obj = b29PP.b29PP()
@@ -12,8 +13,9 @@ regressor = LinearRegression()
 regressor.fit(x_train,y_train)
 
 y_prediction = regressor.predict(x_test)
-print(r2_score(y_test,y_prediction))
 
-#r2_scores: BE- : 0.5269561623575656   BE+ :0.5130073269361772
 
+print(regressor.score(x_train,y_train))
+
+#r2_scores: BE- : 0.9145366334467461   BE+ :0.9131813596701345 #Yas kolonu silinir
 

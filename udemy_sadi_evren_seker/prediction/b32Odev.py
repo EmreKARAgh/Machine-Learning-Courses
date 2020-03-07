@@ -12,4 +12,4 @@ regressor.fit(x_train,y_train)
 y_prediction = regressor.predict(x_test)
 print(r2_score(y_test,y_prediction))
 
-#r2_scores: BE- : -1.3108047443640687   BE+ :-0.30228134925220784
+#r2_scores: BackwardElimination- : -1.3108047443640687   BackwardElimination+ :-0.30228134925220784
