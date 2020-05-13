@@ -50,5 +50,5 @@ class b37_PolyReg:
     def getData(self):
         return self.run()
 
-#obj = b37_PolyReg()
-#fig = obj.getData()
+obj = b37_PolyReg()
+fig = obj.getData()

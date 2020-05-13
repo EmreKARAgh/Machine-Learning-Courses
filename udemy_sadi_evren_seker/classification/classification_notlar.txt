@@ -1,0 +1,17 @@
+Sýnýflandýrma Algoritmalarý Karþýlaþtýrma ve Özet
+Bölüm 3'te 7 sýnýflandýrma modelini öðrendiniz. Daha önce, 2. Bölüm'de Regresyon için sorduðunuz aþaðýdaki sorularý bu bölüm sonunda da soruyor olabilirsiniz: 
+
+Her modelin artýlarý ve eksileri nelerdir? 
+Problemim için hangi modeli seçeceðimi nasýl bilebilirim? 
+Bu modellerin her birini nasýl geliþtirebilirim?
+Yeniden bu sorularýn her birine tek tek cevap verelim: 
+
+1. Her modelin artýlarý ve eksileri nelerdir? Burada her sýnýflandýrma modelinin tüm artýlarýný ve eksilerini veren bir özet sayfasý bulabilirsiniz (buraya týklayýnýz). (https://www.bilkav.com/wp-content/uploads/2018/03/udemy_siniflandirma_karsilastirma.pdf)
+
+2. Problemim için hangi modeli seçeceðimi nasýl bilebilirim? Regresyon modelleri için olduðu gibi, probleminizin doðrusal mý yoksa doðrusal olmayan özellikte mi olduðunu anlamanýz gerekir. Bunu Bölüm 10 - Model Seçimi dersinde öðreneceksiniz. Sonra: Eðer probleminiz doðrusal ise, Lojistik Regresyon veya SVM'yi kullanabilirsiniz. Eðer probleminiz lineer deðil ise, K-NN, Naif Bayes, Karar Aðacý veya Rastgele Ormaný'ný kullanabilirsiniz. Peki hangisini her durumda seçmeliyim? Bunu Bölüm 10'da Model Seçimi k-Katlama Çapraz Doðrulama ile daha detaylý anlatýyor olacaðýz.
+
+Algoritmalara farklý problemler açýsýndan bakýldýðýnda þunlarý kullanmayý tercih ederbilirsiniz: - Tahminlerinizi olasýlýklarýna göre sýralamak istediðinizde Lojistik Regresyon veya Naive Bayes. Örneðin, müþterilerinizi belirli bir ürünü satýn alma olasýlýðý en yüksek olanýndan en düþük olanýna doðru sýralamak istiyorsanýz. Bu sayede, pazarlama kampanyalarýnýzý hedeflenmiþ müþterilere yönlendirebilirsiniz. Ve tabi ki bu tür bir iþ problemi için, eðer probleminiz doðrusal ise Lojistik Regresyonunu, ve probleminiz doðrusal deðilse Naive Bayes'i kullanabilirsiniz. - Müþterilerinizin hangi segmente ait olduðunu tahmin etmek istediðinizde SVM. Segmentler, örneðin, her türlü segment olabilir. Örneðin daha önce kümeleme ile tanýmladýðýnýz bazý pazar segmentleri. - Model sonuçlarýnýzý net bir þekilde yorumlamak istediðinizde Karar Aðacý - Rastgele Orman gibi yöntemleri yine örneðin sadece daha az yorumlama ihtiyacýna sahip yüksek performanslý algoritmalar arýyorsanýz kullanabilirsiniz.
+
+3. Bu modellerin her birini nasýl geliþtirebilirim? 2. Bölüm'deki ile ayný cevabý vermemiz gerekecek: Bölüm 10 - Model Seçiminde, ayarlarýnýzý yaparak, modelinizin performansýný iyileþtirmenize bakacaðýz, yine bu bölümün altýnda, Parametre Ayarlamaya ayrýlmýþ ikinci bölümü bulacaksýnýz. Büyük olasýlýkla zaten her modelin iki tür parametreden oluþtuðunu fark etmiþsinizdir: öðrenilen parametreler, örneðin Doðrusal Regresyondaki katsayýlar ve hiperparametreler. Hiperparametreler öðrenilmeyen ve model denklemlerde sabit deðerleri olan parametrelerdir. Örneðin, lambda regülasyon parametresi veya penaltý parametresi C hiperparametrelerdir. Þimdiye kadar bu hiperparametrelerin varsayýlan deðerini kullandýk ve modeliniz daha yüksek performans göstersin diye bunlarýn optimum deðerleri için araþtýrma yapmadýk. En uygun deðerlerini bulmak, Parametre Ayarýnýn tam olarak ne olduðuyla ilgilidir. Bu nedenle, model performansýnýzý geliþtirmek ve bazý parametreler ayarlamayý yapmakla ilgilenenler için, doðrudan Bölüm 10 - Model Seçimine atlamak iyi bir fikir olabilir. 
+
+Þimdi Bölüm 3'ü tamamladýðýnýz için tebrikler ve yolculuðun bir sonraki bölümüne geçelim:

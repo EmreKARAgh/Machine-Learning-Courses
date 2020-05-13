@@ -2,10 +2,13 @@
 import pandas as pd
 
 class Preprocess:
-    def __init__(self, data_name_c,autoImpute=True):
+    def __init__(self, data_path_c=None,read_dtype=None,autoImpute=True, autoEliminateNullColumns=True):
         try:
-            self.data_name = data_name_c
-            self.data = pd.read_csv(('src/'+self.data_name))
+            self.data=pd.read_csv(data_path_c, dtype=read_dtype)
+            self.source_columns = None
+            self.target_columns = None
+            if autoEliminateNullColumns:
+                self.eliminateNullColumns()
             if autoImpute:
                 self.impute()
         except:
@@ -44,9 +47,13 @@ class Preprocess:
             return self.data
         except:
             print('Can not Drop Columns')
-    def encode(self,cols,encoder = 'LabelEncoder'):
+    def encode(self,cols=None,encoder = 'LabelEncoder'):
         try:
-            cols = self.getCols(cols)
+            if(cols == None):
+#                cols=self.data.loc[:, self.data.columns != 'rcv.clinical_significance']
+                cols = self.data
+            else:
+                cols = self.getCols(cols)
             if encoder == 'LabelEncoder':
                 from sklearn.preprocessing import LabelEncoder
                 le = LabelEncoder()
@@ -54,6 +61,7 @@ class Preprocess:
                     column = self.data[column_name].values.ravel()
                     column_temp = le.fit_transform(column)
                     self.__updateColumn(column_temp, column_name)
+                    self.data[column_name] = self.data[column_name].astype(int)
             elif encoder == 'OneHotEncoder':
                 print('Not implemented')
         except:
@@ -77,7 +85,7 @@ class Preprocess:
         except:
             print('Can not Split for Train-Test')
             return [],[],[],[]
-    def scale(self,cols=None):
+    def scale(self,cols=None, onData=True):
         try:
             if(cols == None):
                 cols=self.data
@@ -89,8 +97,9 @@ class Preprocess:
                 column = self.data[[column_name]].astype(float)
                 column = sc.fit_transform(column)
                 self.__updateColumn(column, column_name)
-        except:
+        except Exception as e:
             print('Can not Scale')
+            print(e)
     def bWElimination(self,target_columns,source_columns=None,pValue=0.05):
         import statsmodels.api as sm
         import numpy as np
@@ -129,13 +138,19 @@ class Preprocess:
             return cols
         if all(isinstance(n, str) for n in cols):
             return self.data[cols]
-obj = Preprocess('veriler.csv', autoImpute=True) #AutoImpute : True
-#obj.impute([3,4], strategy_s='const', fill_value_c='e')
-#cols = obj.dropCols([0,2])
-#Impute first!
-#obj.encode(['ulke','cinsiyet'])
-obj.encode([0,4])
-obj.scale()
-obj.bWElimination([1])
-x_train, x_test, y_train, y_test = obj.trainTestSplitting([1])
-obj.print()
+    def dropRows(self,rows):
+        self.data.drop(rows, inplace = True)
+    def eliminateNullColumns(self,percentage=0.73):
+        self.data = self.data.loc[:, self.data.isnull().mean() < percentage]
+    def getData(self):
+        return self.data
+#obj = Preprocess('veriler.csv', autoImpute=True) #AutoImpute : True
+##obj.impute([3,4], strategy_s='const', fill_value_c='e')
+##cols = obj.dropCols([0,2])
+##Impute first!
+##obj.encode(['ulke','cinsiyet'])
+#obj.encode([0,4])
+#obj.scale()
+#obj.bWElimination([1])
+#x_train, x_test, y_train, y_test = obj.trainTestSplitting([1])
+#obj.print()
